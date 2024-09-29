@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz demo</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0f0f, #1b1b1b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            font-size: 80%; /* 默认字体缩小20% */
+        }
+
+        /* 容器样式 */
+        .container {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 2rem; /* 缩小字体 */
+            color: #00d4ff;
+            text-shadow: 0px 0px 10px rgba(0, 212, 255, 0.8);
+            margin-bottom: 30px;
+        }
+
+        /* 按钮样式 */
+        button {
+            background: linear-gradient(45deg, #00ffcc, #0066ff);
+            border: none;
+            padding: 12px 24px; /* 缩小按钮大小 */
+            font-size: 1rem;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5), 0 0 30px rgba(0, 102, 255, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 按钮悬停样式 */
+        button:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 204, 1), 0 0 40px rgba(0, 102, 255, 1);
+            transform: scale(1.05);
+        }
+
+        /* 隐藏的地图链接 */
+        #map-link {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* 地图链接按钮样式 */
+        #map-link a {
+            background: linear-gradient(45deg, #00ffcc, #0066ff);
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5), 0 0 30px rgba(0, 102, 255, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 地图链接按钮悬停样式 */
+        #map-link a:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 204, 1), 0 0 40px rgba(0, 102, 255, 1);
+        }
+
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem; /* 调整移动设备的标题大小 */
+            }
+
+            button, #map-link a {
+                padding: 10px 20px;
+                font-size: 0.9rem; /* 调整移动设备的按钮大小 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem; /* 进一步缩小标题 */
+            }
+
+            button, #map-link a {
+                padding: 8px 16px;
+                font-size: 0.8rem; /* 进一步缩小按钮 */
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        function askQuestions() {
+            var answer1 = prompt("在哪里红眼睛");
+            if (answer1 === "The Woods") {
+                var answer2 = prompt("臭不要脸第一次付钱");
+                if (answer2 === "西贝莜面村") {
+                    var answer3 = prompt("此demo开发者是ROKU的什么角色");
+                    if (answer3 === "爸爸") {
+                        document.getElementById("map-link").style.display = "block";
+                    } else {
+                        alert("不会吧，这都错。叠词都不会。");
+                    }
+                } else {
+                    alert("Tips:还搞个荒唐option顺德菜");
+                }
+            } else {
+                alert("有定冠词，要区分大小写，差评。");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Answer the Questions to Continue the demo</h1>
+        <button onclick="askQuestions()">Start</button>
+
+        <div id="map-link">
+            <h2 style="color: #00ffcc;">答对了请举手，同时说明非常臭不要脸，时间+3.5h就是报销timing</h2>
+            <a href="https://maps.apple.com/?address=%E4%B8%AD%E5%9B%BD%E5%B9%BF%E4%B8%9C%E7%9C%81%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E8%8D%94%E8%8A%B3%E4%B8%80%E8%A1%97%E4%B8%8E%E5%8D%97%E5%B1%B1%E5%A4%A7%E9%81%93%E4%BA%A4%E5%8F%89%E5%8F%A3%E8%A5%BF40%E7%B1%B3&auid=1118793145618304&ll=22.526260,113.923480&lsp=57879&q=%E6%9C%AA%E9%86%92tipsy%E9%A4%90%E9%85%92%E9%A6%86&t=m" target="_blank">在砸到牛顿的玩意地图打开</a>
+        </div>
+    </div>
+</body>
+</html>
